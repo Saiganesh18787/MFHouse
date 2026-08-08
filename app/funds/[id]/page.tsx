@@ -17,6 +17,7 @@ import { getFundManager } from "@/services/fund-manager.service";
 import { getFundMetadata } from "@/services/fund-metadata.service";
 import { getExitLoads } from "@/services/exit-load.service";
 import { getMarketCap } from "@/services/market-cap.service";
+export const dynamic = "force-dynamic";
 
 interface FundPageProps {
   params: Promise<{
