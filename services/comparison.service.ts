@@ -290,7 +290,7 @@ const removedHoldings = comparison.filter(
 
 const chartData: ComparisonChartData[] =
   comparison
-    .slice(0, 20)
+    .slice(0, 50)
     .map((holding) => ({
       holding: holding.securityName,
       previousAllocation:
