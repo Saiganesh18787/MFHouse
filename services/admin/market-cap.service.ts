@@ -12,7 +12,7 @@ import {
 export async function getMarketCaps(): Promise<MarketCap[]> {
 
   const { data, error } = await supabase
-    .from("market_cap_allocations")
+    .from("market_caps")
     .select(`
       *,
       factsheets (
