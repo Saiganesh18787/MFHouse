@@ -15,7 +15,9 @@ import { ComparisonChartData } from "@/types/comparison";
 
 interface ComparisonChartProps {
   data: ComparisonChartData[];
+
   previousMonth: string;
+
   currentMonth: string;
 }
 
@@ -26,15 +28,20 @@ export default function ComparisonChart({
 }: ComparisonChartProps) {
   if (data.length === 0) {
     return (
-      <div>
-        No comparison data available.
+      <div className="flex h-[420px] items-center justify-center">
+        <p className="text-gray-500">
+          No comparison data available.
+        </p>
       </div>
     );
   }
 
   return (
-    <div>
-      <ResponsiveContainer width="100%" height={400}>
+    <div className="h-[460px] w-full">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+      >
         <BarChart
           data={data}
           margin={{
@@ -45,7 +52,10 @@ export default function ComparisonChart({
           }}
           barGap={8}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            vertical={false}
+          />
 
           <XAxis
             dataKey="holding"
