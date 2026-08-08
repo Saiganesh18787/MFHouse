@@ -2,6 +2,8 @@ import Container from "@/components/layout/Container";
 import FundExplorer from "@/components/fund/FundExplorer";
 import { getFunds } from "@/services/fund.service";
 
+export const dynamic = "force-dynamic";
+
 export default async function FundsPage() {
   const funds = await getFunds();
 
