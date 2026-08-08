@@ -60,7 +60,7 @@ export async function getMarketCapById(
 ): Promise<MarketCap | null> {
 
   const { data, error } = await supabase
-    .from("market_cap_allocations")
+    .from("market_caps")
     .select(`
       *,
       factsheets (
@@ -112,7 +112,7 @@ export async function createMarketCap(
 ): Promise<MarketCap> {
 
   const { data, error } = await supabase
-    .from("market_cap_allocations")
+    .from("market_caps")
     .insert(values)
     .select()
     .single();
@@ -137,7 +137,7 @@ export async function updateMarketCap(
 ): Promise<void> {
 
   const { error } = await supabase
-    .from("market_cap_allocations")
+    .from("market_caps")
     .update(values)
     .eq("id", id);
 
@@ -158,7 +158,7 @@ export async function deleteMarketCap(
 ): Promise<void> {
 
   const { error } = await supabase
-    .from("market_cap_allocations")
+    .from("market_caps")
     .delete()
     .eq("id", id);
 
@@ -186,7 +186,7 @@ export async function getFactsheetsWithoutMarketCap() {
         id,
         name
       ),
-      market_cap_allocations (
+      market_caps (
         id
       )
     `)
@@ -209,7 +209,7 @@ export async function getFactsheetsWithoutMarketCap() {
     .filter((factsheet: any) => {
 
       const marketCap =
-        factsheet.market_cap_allocations ?? [];
+        factsheet.market_caps ?? [];
 
       return marketCap.length === 0;
 
