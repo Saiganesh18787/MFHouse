@@ -39,21 +39,6 @@ export default function PerformanceTab({
         </div>
 
         <PerformanceRow
-          period="1 Month"
-          value={performance?.one_month ?? null}
-        />
-
-        <PerformanceRow
-          period="3 Months"
-          value={performance?.three_month ?? null}
-        />
-
-        <PerformanceRow
-          period="6 Months"
-          value={performance?.six_month ?? null}
-        />
-
-        <PerformanceRow
           period="1 Year"
           value={performance?.one_year ?? null}
         />
