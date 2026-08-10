@@ -92,6 +92,22 @@ export default function PortfolioTab({
         </div>
       </section>
 
+      {/* =====================================
+    MARKET CAP ALLOCATION
+===================================== */}
+
+        <section>
+
+          <h2 className="mb-4 text-xl font-semibold text-gray-900">
+            Market Cap Allocation
+          </h2>
+
+          <MarketCapChart
+            data={marketCap}
+          />
+
+        </section>
+
       {/* ALL HOLDINGS */}
 
       <section>
@@ -108,21 +124,7 @@ export default function PortfolioTab({
         <HoldingsTable holdings={holdings} />
       </section>
 
-      {/* =====================================
-    MARKET CAP ALLOCATION
-===================================== */}
-
-        <section>
-
-          <h2 className="mb-4 text-xl font-semibold text-gray-900">
-            Market Cap Allocation
-          </h2>
-
-          <MarketCapChart
-            data={marketCap}
-          />
-
-        </section>
+      
     </div>
   );
 }
